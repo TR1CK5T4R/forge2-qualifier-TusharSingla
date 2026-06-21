@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -30,11 +29,11 @@ class Card extends Model
 
     public function tags()
     {
-        return $this->belongsToMany(Tag::class)->withTimestamps();
+        return $this->belongsToMany(Tag::class);
     }
 
     public function members()
     {
-        return $this->belongsToMany(Member::class)->withTimestamps();
+        return $this->belongsToMany(Member::class);
     }
 }
