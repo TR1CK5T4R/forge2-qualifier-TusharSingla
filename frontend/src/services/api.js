@@ -22,9 +22,32 @@ export const fetchBoardDetails = async (boardId) => {
     }
     return await response.json();
   } catch (error) {
-    console.error(\`Error fetching board details for ${boardId}:\`, error);
+    console.error(`Error fetching board details for ${boardId}:`, error);
     throw error;
   }
 };
 
-// Add more functions for lists, cards, tags, members as needed
+export const updateCardList = async (cardId, newListId, newIndex) => {
+  try {
+    const response = await fetch(`${API_BASE_URL}/cards/${cardId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        list_id: newListId,
+        order: newIndex, // Assuming your API can handle an 'order' or 'index' field for positioning
+      }),
+    });
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(`HTTP error! status: ${response.status}: ${errorData.message || 'Unknown error'}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error(`Error updating card ${cardId} list to ${newListId}:`, error);
+    throw error;
+  }
+};
+
+// Add more functions for tags, members, due dates as needed
