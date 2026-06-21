@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BoardController;
-use App\Http\Controllers\KanbanListController;
-use App\Http\Controllers\CardController;
-use App\Http\Controllers\TagController;
-use App\Http\Controllers\MemberController;
+use App\Http\Controllers\Api\BoardController;
+use App\Http\Controllers\Api\KanbanListController;
+use App\Http\Controllers\Api\CardController;
+use App\Http\Controllers\Api\TagController;
+use App\Http\Controllers\Api\MemberController;
 
 /*
 |--------------------------------------------------------------------------

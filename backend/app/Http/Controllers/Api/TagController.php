@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Tag;
 use App\Models\Tag; // Import Tag model
 use Illuminate\Http\Request;
 
