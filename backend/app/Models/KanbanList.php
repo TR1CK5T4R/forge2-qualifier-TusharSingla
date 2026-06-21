@@ -9,6 +9,8 @@ class KanbanList extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     protected $fillable = [
         'board_id',
         'name',

@@ -1,9 +1,8 @@
-// frontend/src/components/KanbanList.jsx
 import React from 'react';
 import CardComponent from './CardComponent';
-import { Droppable, Draggable } from 'react-beautiful-dnd';
+import { Droppable, Draggable } from '@hello-pangea/dnd';
 
-function KanbanList({ list, index }) { // Receive index for droppable prop
+function KanbanList({ list, index }) {
   return (
     <Draggable draggableId={list.id.toString()} index={index}>
       {(provided) => (
@@ -22,8 +21,8 @@ function KanbanList({ list, index }) { // Receive index for droppable prop
                 style={{
                   backgroundColor: snapshot.isDraggingOver ? 'lightblue' : 'transparent',
                   padding: '8px',
-                  minHeight: '100px', // Ensure there's space to drop
-                  flexGrow: 1, // Allow list to expand
+                  minHeight: '100px',
+                  flexGrow: 1,
                 }}
               >
                 {list.cards && list.cards.map((card, cardIndex) => (
@@ -33,7 +32,6 @@ function KanbanList({ list, index }) { // Receive index for droppable prop
               </div>
             )}
           </Droppable>
-          {/* Add functionality to add new cards later */}
         </div>
       )}
     </Draggable>

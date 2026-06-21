@@ -51,3 +51,13 @@ export const updateCardList = async (cardId, newListId, newIndex) => {
 };
 
 // Add more functions for tags, members, due dates as needed
+
+export const createBoard = async (boardData) => {
+  const response = await fetch(`${API_BASE_URL}/boards`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(boardData),
+  });
+  if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+  return await response.json();
+};

@@ -9,6 +9,8 @@ class Card extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     protected $fillable = [
         'list_id',
         'title',
