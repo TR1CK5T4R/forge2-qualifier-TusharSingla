@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('member_card', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreignId('member_id')->constrained()->onDelete('cascade');
+            $table->foreignId('card_id')->constrained()->onDelete('cascade');
+            $table->unique(['member_id', 'card_id']);
+
         });
     }
 

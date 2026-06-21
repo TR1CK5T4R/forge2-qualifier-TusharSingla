@@ -13,7 +13,10 @@ return new class extends Migration
     {
         Schema::create('kanban_lists', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreignId('board_id')->constrained()->onDelete('cascade');
+            $table->string('name');
+            $table->integer('position')->default(0);
+
         });
     }
 
